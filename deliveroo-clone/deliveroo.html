@@ -74,6 +74,7 @@
       height: 305px;
       flex-grow: 0;
       margin: 0 6px 15px 8px;
+      padding-bottom: 5px;
     }
 
     .food-img img {
@@ -84,10 +85,27 @@
     .food-txt {
       flex: 1;
       font-size: 11pt;
+      padding: 0 5px 5px 5px;
+      color: rgb(145, 145, 145);
+      margin: 0 1px 0 1px;
+    }
+
+    .food-txt h4 {
+      color: black;
+    }
+
+    span {
+      padding: 0 0 0 5px;
+      line-height: 25px;
+      font-weight: lighter;
     }
 
     .rating {
       color: rgb(150, 235, 65);
+    }
+
+    .offers {
+      color: rgb(255, 64, 64);
     }
   </style>
 </head>
@@ -181,6 +199,8 @@
           <h4>Dishoom</h4>
           <span class="rating">★ 4.8 Excellent</span>
           • £££ • Curry • Indian
+          <span>1.2 miles away • £2.29 delivery</span><br />
+          <span class="offers">Spend £15 to receive a free item</span>
         </div>
       </div>
       <div class="listing" id="item2">
@@ -192,7 +212,9 @@
         <div class="food-txt">
           <h4>Gourmet Sushi</h4>
           <span class="rating">★ 4.7 Excellent</span>
-          • ££ • Japanese • Sushi
+          • ££ • Japanese • Sushi<br />
+          <span>0.3 miles away • £1.29 delivery</span><br />
+          <span class="offers">25% off entire menu</span>
         </div>
       </div>
       <div class="listing" id="item3">
@@ -204,6 +226,8 @@
         <div class="food-txt">
           <h4>Three Uncles</h4>
           <span class="rating">★ 4.5 Excellent</span> • ££ • Asian • Taiwanese
+          <span>0.9 miles away • £1.89 delivery</span><br />
+          <span class="offers">Free delivery when you spend £10</span>
         </div>
       </div>
       <div class="listing" id="item4">
@@ -215,6 +239,8 @@
         <div class="food-txt">
           <h4>Bagel Master</h4>
           <span class="rating">★ 4.6 Excellent</span> • £ • Bagels • Sandwiches
+          <span>0.2 miles away • £0.00 delivery</span><br />
+          <span class="offers">Free delivery on local orders</span>
         </div>
       </div>
       <div class="listing" id="item5">
@@ -227,9 +253,24 @@
           <h4>Rosa's Thai Cafe</h4>
           <span class="rating">★ 4.9 Excellent</span>
           • ££ • Curry • Thai
+          <span>1.4 miles away • £2.39 delivery</span><br />
+          <span class="offers">Free side when you spend over £20</span>
         </div>
       </div>
-      <div class="listing" id="item6"><h4>Morning Birds</h4></div>
+      <div class="listing" id="item6">
+        <div class="food-img">
+          <img
+            src="https://rs-menus-api.roocdn.com/images/aa85bc32-bc7d-485f-b9aa-cd63c502f651/image.jpeg?width=1200&height=630&auto=webp&format=jpg&fit=crop&v="
+          />
+        </div>
+        <div class="food-txt">
+          <h4>Morning Birds</h4>
+          <span class="rating">★ 4.5 Excellent</span>
+          • £ • Breakfast • British
+          <span>0.8 miles away • £1.69 delivery</span><br />
+          <span class="offers">50% off entire menu</span>
+        </div>
+      </div>
       <div class="listing" id="item7"><h4>Lemongrass</h4></div>
       <div class="listing" id="item8"><h4>Sushi Samurai</h4></div>
       <div class="listing" id="item9"><h4>LEON</h4></div>
