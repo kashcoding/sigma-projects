@@ -4,14 +4,18 @@
   <title>Deliveroo Clone</title>
   <style>
     body {
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    h4 {
+      margin: 5px;
     }
 
     #logo img {
@@ -41,6 +45,32 @@
       display: inline-block;
       padding: 8px 12px 8px 12px;
     }
+
+    main {
+      display: flex;
+      flex-direction: row;
+    }
+
+    nav {
+      font-size: 10pt;
+      margin: 0 25px 5px 20px;
+      padding: 0px 20px 5px 10px;
+      white-space: nowrap;
+      border: 1px solid rgb(230, 230, 230);
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .listing {
+      border: 1px solid rgb(230, 230, 230);
+      border-radius: 4px;
+      width: 100px;
+      height: 100px;
+      flex-grow: 0;
+    }
   </style>
 </head>
 <body>
@@ -58,5 +88,91 @@
       <button class="button" id="menu">Menu</button>
     </div>
   </header>
-  <main></main>
+  <main>
+    <nav>
+      <h4>Categories</h4>
+      <input type="checkbox" />Alcohol<br />
+      <input type="checkbox" />American<br />
+      <input type="checkbox" />Breakfast<br />
+      <input type="checkbox" />Bubble tea<br />
+      <input type="checkbox" />Burgers<br />
+      <input type="checkbox" />Burritos<br />
+      <input type="checkbox" />Cakes<br />
+      <input type="checkbox" />Chicken<br />
+      <input type="checkbox" />Chinese<br />
+      <input type="checkbox" />Curry<br />
+      <input type="checkbox" />Dessert<br />
+      <input type="checkbox" />Drinks<br />
+      <input type="checkbox" />Ethiopian<br />
+      <input type="checkbox" />Fast food<br />
+      <input type="checkbox" />Fine dining<br />
+      <input type="checkbox" />Fish and chips<br />
+      <input type="checkbox" />Free delivery<br />
+      <input type="checkbox" />Greek<br />
+      <input type="checkbox" />Grocery<br />
+      <input type="checkbox" />Healthy options<br />
+      <input type="checkbox" />Hot pot<br />
+      <input type="checkbox" />Ice cream<br />
+      <input type="checkbox" />Indian<br />
+      <input type="checkbox" />Italian<br />
+      <input type="checkbox" />Jamaican<br />
+      <input type="checkbox" />Japanese<br />
+      <input type="checkbox" />Juices<br />
+      <input type="checkbox" />Kebabs<br />
+      <input type="checkbox" />Kids menu<br />
+      <input type="checkbox" />Korean<br />
+      <input type="checkbox" />Late night delivery<br />
+      <input type="checkbox" />Lebanese<br />
+      <input type="checkbox" />Local offers<br />
+      <input type="checkbox" />Meal deal<br />
+      <input type="checkbox" />Mexican<br />
+      <input type="checkbox" />Middle Eastern<br />
+      <input type="checkbox" />Milkshakes<br />
+      <input type="checkbox" />New on Deliveroo<br />
+      <input type="checkbox" />Noodles<br />
+      <input type="checkbox" />Organic<br />
+      <input type="checkbox" />Our picks<br />
+      <input type="checkbox" />Pancakes<br />
+      <input type="checkbox" />Perfect for sharing<br />
+      <input type="checkbox" />Pizza<br />
+      <input type="checkbox" />Polish<br />
+      <input type="checkbox" />Popular near you<br />
+      <input type="checkbox" />Ramen<br />
+      <input type="checkbox" />Salads<br />
+      <input type="checkbox" />Sandwiches<br />
+      <input type="checkbox" />Seafood<br />
+      <input type="checkbox" />Smoothie<br />
+      <input type="checkbox" />Snacks<br />
+      <input type="checkbox" />Sushi<br />
+      <input type="checkbox" />Tapas<br />
+      <input type="checkbox" />Thai<br />
+      <input type="checkbox" />Top-rated<br />
+      <input type="checkbox" />Vegan-friendly<br />
+      <input type="checkbox" />Vietnamese<br />
+      <input type="checkbox" />Wine<br />
+      <input type="checkbox" />Wraps<br />
+    </nav>
+    <section class="menu">
+      <div class="listing" id="item1"><h4>Dishoom</h4></div>
+      <div class="listing" id="item2"><h4>Gourmet Sushi</h4></div>
+      <div class="listing" id="item3"><h4>Three Uncles</h4></div>
+      <div class="listing" id="item4"><h4>Bagel Master</h4></div>
+      <div class="listing" id="item5"><h4>Rosa's Thai Cafe</h4></div>
+      <div class="listing" id="item6"><h4>Morning Birds</h4></div>
+      <div class="listing" id="item7"><h4>Lemongrass</h4></div>
+      <div class="listing" id="item8"><h4>Sushi Samurai</h4></div>
+      <div class="listing" id="item9"><h4>LEON</h4></div>
+      <div class="listing" id="item10"><h4>Burger King</h4></div>
+      <div class="listing" id="item11"><h4>Bagel Bay</h4></div>
+      <div class="listing" id="item12"><h4>Tossed</h4></div>
+      <div class="listing" id="item13"><h4>Joe & The Juics</h4></div>
+      <div class="listing" id="item14"><h4>Subway</h4></div>
+      <div class="listing" id="item15"><h4>Pasta Evangelists</h4></div>
+      <div class="listing" id="item16"><h4>Kebab Break</h4></div>
+      <div class="listing" id="item17"><h4>Chipotle</h4></div>
+      <div class="listing" id="item18"><h4>The Salad Project</h4></div>
+      <div class="listing" id="item19"><h4>Crosstown</h4></div>
+      <div class="listing" id="item20"><h4>Pilpel</h4></div>
+    </section>
+  </main>
 </body>
