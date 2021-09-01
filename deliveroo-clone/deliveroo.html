@@ -6,6 +6,7 @@
     body {
       font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
+      padding: 0 10px 5px 20px;
     }
 
     header {
@@ -22,7 +23,6 @@
       border-radius: 2px;
       height: 45px;
       margin: 5px;
-      margin-left: 20px;
     }
 
     #search input {
@@ -53,7 +53,7 @@
 
     nav {
       font-size: 10pt;
-      margin: 0 25px 5px 20px;
+      margin: 0 25px 5px 5px;
       padding: 0px 20px 5px 10px;
       white-space: nowrap;
       border: 1px solid rgb(230, 230, 230);
@@ -65,11 +65,23 @@
     }
 
     .listing {
+      display: flex;
+      flex-direction: column;
       border: 1px solid rgb(230, 230, 230);
       border-radius: 4px;
-      width: 100px;
-      height: 100px;
+      width: 300px;
+      height: 305px;
       flex-grow: 0;
+      margin: 0 6px 15px 8px;
+    }
+
+    .food-img img {
+      width: 100%;
+      flex: 1;
+    }
+
+    .food-txt {
+      flex: 1;
     }
   </style>
 </head>
@@ -153,11 +165,56 @@
       <input type="checkbox" />Wraps<br />
     </nav>
     <section class="menu">
-      <div class="listing" id="item1"><h4>Dishoom</h4></div>
-      <div class="listing" id="item2"><h4>Gourmet Sushi</h4></div>
-      <div class="listing" id="item3"><h4>Three Uncles</h4></div>
-      <div class="listing" id="item4"><h4>Bagel Master</h4></div>
-      <div class="listing" id="item5"><h4>Rosa's Thai Cafe</h4></div>
+      <div class="listing" id="item1">
+        <div class="food-img">
+          <img
+            src="https://counteract.co/wp-content/uploads/2019/02/Dishoom-Birmingham.jpg"
+          />
+        </div>
+        <div class="food-txt">
+          <h4>Dishoom</h4>
+        </div>
+      </div>
+      <div class="listing" id="item2">
+        <div class="food-img">
+          <img
+            src="https://rs-menus-api.roocdn.com/images/186cb3b2-2eee-4286-b368-d8683f811955/image.jpeg?width=1200&height=630&auto=webp&format=jpg&fit=crop&v="
+          />
+        </div>
+        <div class="food-txt">
+          <h4>Gourmet Sushi</h4>
+        </div>
+      </div>
+      <div class="listing" id="item3">
+        <div class="food-img">
+          <img
+            src="https://www.hot-dinners.com/images/stories/blog/2019/threeuncles.jpg"
+          />
+        </div>
+        <div class="food-txt">
+          <h4>Three Uncles</h4>
+        </div>
+      </div>
+      <div class="listing" id="item4">
+        <div class="food-img">
+          <img
+            src="https://rs-menus-api.roocdn.com/images/faba2766-0171-478c-bfa9-5bd877d1d440/image.jpeg?width=1200&height=630&auto=webp&format=jpg&fit=crop&v="
+          />
+        </div>
+        <div class="food-txt">
+          <h4>Bagel Master</h4>
+        </div>
+      </div>
+      <div class="listing" id="item5">
+        <div class="food-img">
+          <img
+            src="https://foodscene.deliveroo.co.uk/assets/images/blogs/foodscene.deliveroo.co.uk/en/restaurant-profiles/1xt0xP41nS2TJuvBJw-T6mJ5cYRYcQkP2du1vmihua7A/h_screen_shot_2017-05-19_at_17.00.53.jpg?v=1.01"
+          />
+        </div>
+        <div class="food-txt">
+          <h4>Rosa's Thai Cafe</h4>
+        </div>
+      </div>
       <div class="listing" id="item6"><h4>Morning Birds</h4></div>
       <div class="listing" id="item7"><h4>Lemongrass</h4></div>
       <div class="listing" id="item8"><h4>Sushi Samurai</h4></div>
