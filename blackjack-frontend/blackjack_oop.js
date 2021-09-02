@@ -1,20 +1,33 @@
-function shuffle(array, seed = 1) {
-  let currentIndex = array.length;
-  let temporaryValue, randomIndex;
+class Utility {
+  static shuffle(array, seed = 1) {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
 
-  let random = () => {
-    var x = Math.sin(seed++) * 10000;
-    return x - Math.floor(x);
-  };
+    let random = () => {
+      var x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    };
 
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
-  return array;
+
+  static setSrc(card) {
+    let cardFace;
+    if (card.toString()[1] === "0") {
+      cardFace = `0${card.suit}`;
+    } else {
+      cardFace = card.toString();
+    }
+
+    return `https://deckofcardsapi.com/static/img/${cardFace}.png`;
+  }
 }
 
 class Card {
@@ -110,19 +123,8 @@ class Deck {
   }
 
   shuffle(seed = Date.now()) {
-    return shuffle(this.cards, seed);
+    return Utility.shuffle(this.cards, seed);
   }
-}
-
-function setSrc(card) {
-  let cardFace;
-  if (card.toString()[1] === "0") {
-    cardFace = `0${card.suit}`;
-  } else {
-    cardFace = card.toString();
-  }
-
-  return `https://deckofcardsapi.com/static/img/${cardFace}.png`;
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -137,8 +139,8 @@ window.addEventListener("DOMContentLoaded", function () {
   card1img.setAttribute("id", "card1");
   card2img.setAttribute("id", "card2");
 
-  card1img.src = setSrc(card1);
-  card2img.src = setSrc(card2);
+  card1img.src = Utility.setSrc(card1);
+  card2img.src = Utility.setSrc(card2);
 
   document.querySelector(".cards").append(card1img, card2img);
 });
