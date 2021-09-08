@@ -18,8 +18,13 @@ class Form extends React.Component {
   }
 
   submitForm() {
-    this.props.handleSubmit(this.state);
-    this.setState(this.initialState);
+    if (
+      this.state.name.trim().length > 0 &&
+      this.state.house.trim().length > 0
+    ) {
+      this.props.handleSubmit(this.state);
+      this.setState(this.initialState);
+    }
   }
 
   render() {
