@@ -15,8 +15,12 @@ const TableBody = (props) => {
   const rows = props.studentData.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{row.name}</td>
-        <td>{row.house}</td>
+        <td>
+          {row.name[0].toUpperCase() + row.name.toLowerCase().substring(1)}
+        </td>
+        <td>
+          {row.house[0].toUpperCase() + row.house.toLowerCase().substring(1)}
+        </td>
         <td>
           <button onClick={() => props.removeStudent(index)}>Delete</button>
         </td>
