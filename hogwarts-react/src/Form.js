@@ -7,7 +7,13 @@ class Form extends React.Component {
   };
   state = this.initialState;
   submitForm = this.submitForm.bind(this);
-  houses = ["gryffindor", "hufflepuff", "ravenclaw", "slytherin"];
+  houses = [
+    "Select a house",
+    "Gryffindor",
+    "Hufflepuff",
+    "Ravenclaw",
+    "Slytherin",
+  ];
 
   handleChange(event) {
     const { name, value } = event.target;
@@ -20,7 +26,7 @@ class Form extends React.Component {
   submitForm() {
     if (
       this.state.name.trim().length > 0 &&
-      this.houses.includes(this.state.house.toLowerCase())
+      this.state.house !== "Select a house"
     ) {
       this.props.handleSubmit(this.state);
       this.setState(this.initialState);
@@ -29,7 +35,6 @@ class Form extends React.Component {
 
   render() {
     let { name, house } = this.state;
-    console.log(house.length);
     return (
       <form>
         <label htmlFor="name">Name</label>
@@ -41,13 +46,20 @@ class Form extends React.Component {
           onChange={(e) => this.handleChange(e)}
         />
         <label htmlFor="house">House</label>
-        <input
-          type="text"
+        <select
           name="house"
           id="house"
           value={house}
           onChange={(e) => this.handleChange(e)}
-        />
+        >
+          {this.houses.map((house, index) => {
+            return (
+              <option key={index} name="house" value={house}>
+                {house}
+              </option>
+            );
+          })}
+        </select>
         <input type="button" value="Submit" onClick={this.submitForm} />
       </form>
     );
