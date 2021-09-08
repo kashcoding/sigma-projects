@@ -20,7 +20,7 @@ class Form extends React.Component {
   submitForm() {
     if (
       this.state.name.trim().length > 0 &&
-      this.state.house.trim().length > 0
+      this.houses.includes(this.state.house.toLowerCase())
     ) {
       this.props.handleSubmit(this.state);
       this.setState(this.initialState);
