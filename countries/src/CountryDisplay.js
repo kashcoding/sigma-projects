@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 
 class CountryDisplay extends React.Component {
   constructor(props) {
@@ -28,21 +29,41 @@ class CountryDisplay extends React.Component {
     } else {
       return (
         <section className="main">
-          <h4>{this.state.countryData.subregion}</h4>
-          <h1>{this.state.countryData.name}</h1>
+          <h4>
+            <span className="label">{this.state.countryData.subregion}</span>
+          </h4>
+          <h1>
+            <span id="name">{this.state.countryData.name}</span>
+          </h1>
           <img
             className="flag"
             src={this.state.countryData.flag}
             alt="Flag"
           ></img>
-          <h3>Capital: {`${this.state.countryData.capital}`}</h3>
           <h3>
-            Population:{" "}
-            {`${this.state.countryData.population.toLocaleString()}`}
+            <span className="label">Capital:</span>{" "}
+            {`${this.state.countryData.capital}`}
           </h3>
-          <h3>Language: {`${this.state.countryData.languages[0].name}`}</h3>
-          <h3>Currency: {`${this.state.countryData.currencies[0].name}`}</h3>
-          <h3>Timezone: {this.state.countryData.timezones}</h3>
+          <h3>
+            <span className="label">Population:</span>{" "}
+            {`${this.state.countryData.population
+              .toLocaleString("en-US")
+              .replaceAll(",", ", ")}`}
+          </h3>
+          <h3>
+            <span className="label">Language:</span>{" "}
+            {`${this.state.countryData.languages[0].name}`}
+          </h3>
+          <h3>
+            <span className="label">Currency:</span>{" "}
+            {`${this.state.countryData.currencies[0].name}`}
+          </h3>
+          <h3>
+            <span className="label">Timezone:</span>{" "}
+            {this.state.countryData.timezones
+              .toLocaleString("en-US")
+              .replaceAll(",", ", ")}
+          </h3>
         </section>
       );
     }

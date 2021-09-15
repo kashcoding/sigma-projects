@@ -64,7 +64,7 @@ class Sidebar extends React.Component {
       "U",
       "V",
       "W",
-      "X",
+      // "X",
       "Y",
       "Z",
     ];
@@ -80,8 +80,8 @@ class Sidebar extends React.Component {
             key={`${alphabet[i]}-countries`}
             id={alphabet[i]}
           >
-            <h2>{alphabet[i]}</h2>
-            {this.displayCountry(alphabet[i])}
+            <h2 id="letter">{alphabet[i]}</h2>
+            <div id="scroll-btns">{this.displayCountry(alphabet[i])}</div>
           </div>
         );
       }
@@ -92,8 +92,8 @@ class Sidebar extends React.Component {
   render() {
     return (
       <nav className="sidebar">
-        <h1>Select a country</h1>
-        {this.displayAlphabet()}
+        <h1 id="select">Select a country</h1>
+        <div className="scroll">{this.displayAlphabet()}</div>
       </nav>
     );
   }

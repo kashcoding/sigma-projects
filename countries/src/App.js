@@ -8,7 +8,6 @@ function App() {
   const [displayData, setDisplayData] = useState([]);
 
   async function handleClick(e) {
-    console.log(`countryCodePassed is ${e.target.id}`);
     const countryCodePassed = e.target.id;
     setCountryCode(countryCodePassed);
   }
