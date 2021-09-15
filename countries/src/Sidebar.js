@@ -14,24 +14,78 @@ class Sidebar extends React.Component {
     this.setState({ countryList });
   }
   displayCountry = this.displayCountry.bind(this);
+  displayAlphabet = this.displayAlphabet.bind(this);
 
-  displayCountry() {
+  displayCountry(letter) {
     if (!this.state.countryList) {
       return <div>Loading...</div>;
     } else {
-      const countryEl = this.state.countryList.map((country) => {
-        return (
-          <input
-            type="button"
-            className="country-btn"
-            id={country.alpha2Code}
-            key={country.alpha2Code}
-            value={country.name}
-            onClick={this.props.handleClick}
-          ></input>
-        );
+      const countryEl = this.state.countryList.map((country, i) => {
+        if (country.name[0] === letter) {
+          return (
+            <input
+              type="button"
+              className="country-btn"
+              id={country.alpha2Code}
+              key={country.alpha2Code}
+              value={country.name}
+              onClick={this.props.handleClick}
+            ></input>
+          );
+        }
+        return null;
       });
       return countryEl;
+    }
+  }
+
+  displayAlphabet() {
+    const alphabet = [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+    ];
+
+    if (!this.state.countryList) {
+      return <div>Loading...</div>;
+    } else {
+      let newDiv = [];
+      for (let i = 0; i < alphabet.length; i++) {
+        newDiv.push(
+          <div
+            className="countries"
+            key={`${alphabet[i]}-countries`}
+            id={alphabet[i]}
+          >
+            <h2>{alphabet[i]}</h2>
+            {this.displayCountry(alphabet[i])}
+          </div>
+        );
+      }
+      return newDiv;
     }
   }
 
@@ -39,7 +93,7 @@ class Sidebar extends React.Component {
     return (
       <nav className="sidebar">
         <h1>Select a country</h1>
-        {this.displayCountry()}
+        {this.displayAlphabet()}
       </nav>
     );
   }
