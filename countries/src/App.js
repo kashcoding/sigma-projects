@@ -23,17 +23,9 @@ function App() {
     }
   }, [countryCode]); //LOOK INTO THIS
 
-  // function displayCountryData() {
-  //   const empty = [];
-  //   empty.push(<CountryDisplay key={countryCode} countryCode={countryCode} />);
-  //   setDisplayData(empty);
-  // }
-
   return (
     <div className="App">
       <Sidebar handleClick={handleClick} />
-      {/* {console.log(countryCode)} */}
-      {/* <CountryDisplay countryCode={countryCode} /> */}
       {displayData}
     </div>
   );
