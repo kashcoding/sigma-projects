@@ -8,13 +8,24 @@ class Sidebar extends React.Component {
 
   async componentDidMount() {
     const apiResponse = await fetch(
-      "https://restcountries.eu/rest/v2/all?fields=name;alpha2Code"
+      "https://restcountries.eu/rest/v2/all?fields=name;alpha2Code;flag"
     );
     const countryList = await apiResponse.json();
     this.setState({ countryList });
   }
   displayCountry = this.displayCountry.bind(this);
   displayAlphabet = this.displayAlphabet.bind(this);
+
+  changeBtnOnEnter(alpha2code, flag) {
+    document.getElementById(
+      alpha2code
+    ).style.backgroundImage = `url('${flag}')`;
+    document.getElementById(alpha2code).style.backgroundSize = `contain`;
+  }
+
+  changeBtnOnLeave(alpha2code) {
+    document.getElementById(alpha2code).style.backgroundImage = `none`;
+  }
 
   displayCountry(letter) {
     if (!this.state.countryList) {
@@ -29,6 +40,10 @@ class Sidebar extends React.Component {
               id={country.alpha2Code}
               key={country.alpha2Code}
               value={country.name}
+              onMouseEnter={() => {
+                this.changeBtnOnEnter(country.alpha2Code, country.flag);
+              }}
+              onMouseLeave={() => this.changeBtnOnLeave(country.alpha2Code)}
               onClick={this.props.handleClick}
             ></input>
           );

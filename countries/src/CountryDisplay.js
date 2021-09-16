@@ -46,9 +46,7 @@ class CountryDisplay extends React.Component {
           </h3>
           <h3>
             <span className="label">Population:</span>{" "}
-            {`${this.state.countryData.population
-              .toLocaleString("en-US")
-              .replaceAll(",", ", ")}`}
+            {`${this.state.countryData.population.toLocaleString("en-US")}`}
           </h3>
           <h3>
             <span className="label">Language:</span>{" "}

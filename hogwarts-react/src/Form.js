@@ -7,13 +7,8 @@ class Form extends React.Component {
   };
   state = this.initialState;
   submitForm = this.submitForm.bind(this);
-  houses = [
-    "Select a house",
-    "Gryffindor",
-    "Hufflepuff",
-    "Ravenclaw",
-    "Slytherin",
-  ];
+  sortHouse = this.sortHouse.bind(this);
+  houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
   handleChange(event) {
     const { name, value } = event.target;
@@ -23,8 +18,20 @@ class Form extends React.Component {
     });
   }
 
+  sortHouse() {
+    const randomHouse = this.houses[Math.floor(Math.random() * 10)]
+    this.setState((prevState) => { 
+      return {
+        ...prevState.name, 
+        this.state.house: randomHouse}});
+  }
+
   submitForm() {
-    if (
+    if (this.state.name.trim().length > 0 && this.state.house === "Sort me!") {
+      this.sortHouse();
+      this.props.handleSubmit(this.state);
+      this.setState(this.initialState);
+    } else if (
       this.state.name.trim().length > 0 &&
       this.state.house !== "Select a house"
     ) {
@@ -52,6 +59,9 @@ class Form extends React.Component {
           value={house}
           onChange={(e) => this.handleChange(e)}
         >
+          <option key="select" name="select" value={null}>
+            Select a house
+          </option>
           {this.houses.map((house, index) => {
             return (
               <option key={index} name="house" value={house}>
@@ -59,6 +69,9 @@ class Form extends React.Component {
               </option>
             );
           })}
+          <option key="sort" name="sort" value={null}>
+            Sort me!
+          </option>
         </select>
         <input type="button" value="Submit" onClick={this.submitForm} />
       </form>
