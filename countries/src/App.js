@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     if (countryCode.length > 0) {
-      const empty = []; //Berkan named this
+      const empty = [];
       empty.push(
         <CountryDisplay key={countryCode} countryCode={countryCode} />
       );

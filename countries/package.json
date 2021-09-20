@@ -2,7 +2,7 @@
   "name": "countries",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kashcoding.github.io/sigma-projects/countries/",
+  "homepage": "https://kashcoding.github.io/countries-react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

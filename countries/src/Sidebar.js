@@ -17,14 +17,20 @@ class Sidebar extends React.Component {
   displayAlphabet = this.displayAlphabet.bind(this);
 
   changeBtnOnEnter(alpha2code, flag) {
-    document.getElementById(
-      alpha2code
-    ).style.backgroundImage = `url('${flag}')`;
-    document.getElementById(alpha2code).style.backgroundSize = `contain`;
+    const countryBtn = document.getElementById(alpha2code);
+    countryBtn.style.backgroundImage = `url('${flag}')`;
+    countryBtn.style.backgroundSize = `contain`;
+    countryBtn.style.fontSize = `14pt`;
+    countryBtn.style.textShadow = "0 0 5px #000000, 0 0 5px #000000";
+    countryBtn.style.opacity = `0.9`;
   }
 
   changeBtnOnLeave(alpha2code) {
-    document.getElementById(alpha2code).style.backgroundImage = `none`;
+    const countryBtn = document.getElementById(alpha2code);
+    countryBtn.style.backgroundImage = `none`;
+    countryBtn.style.fontSize = `12pt`;
+    countryBtn.style.opacity = `1`;
+    countryBtn.style.textShadow = "none";
   }
 
   displayCountry(letter) {
